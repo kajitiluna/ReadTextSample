@@ -1,13 +1,18 @@
-package kajitiluna.sample.readtext.huge;
+package kajitiluna.sample.readtext;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public abstract class ReadHugeText {
 
-    protected static final int READ_STEP = 100;
+public class ReadHugeText {
+
+    private ReadType readType_;
+
+    public ReadHugeText(ReadType readType) {
+        this.readType_ = readType;
+    }
 
     public void execute(String filePath) throws IOException {
         BufferedReader bufReader = null;
@@ -22,7 +27,7 @@ public abstract class ReadHugeText {
             long startTime = System.currentTimeMillis();
 
             while (eof == false) {
-                eof = this.readText(bufReader);
+                eof = this.readType_.readText(bufReader);
             }
 
             long endTime = System.currentTimeMillis();
@@ -37,6 +42,4 @@ public abstract class ReadHugeText {
             }
         }
     }
-
-    protected abstract boolean readText(BufferedReader bufReader) throws IOException;
 }

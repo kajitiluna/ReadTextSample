@@ -1,4 +1,5 @@
-1. The time of read a huge file.
+1. The time of reading a huge file.
+    (File size is 1GB = 1024*1024*1024 bytes)
 
 * read();
  RESULT : 68510
@@ -10,3 +11,15 @@
  RESULT :  5270
  RESULT :  5410
 
+
+2. The time of reading too many files.
+    (A file size is 1KB = 1024 bytes, and counts of files is 113137)
+
+* read();
+ RESULT : 58533
+ RESULT : 53130
+
+* read(char[]);
+ RESULT : 14490
+ RESULT : 14330
+ RESULT : 14500
