@@ -5,10 +5,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-
 public class ReadHugeText {
 
     private ReadType readType_;
+
+    public static void main(String[] args) throws IOException {
+        String filePath = "target/sample.txt";
+        // new ReadHugeText(ReadType.BY_ONE_STEP).execute(filePath);
+        new ReadHugeText(ReadType.BY_ARRAY).execute(filePath);
+    }
 
     public ReadHugeText(ReadType readType) {
         this.readType_ = readType;
