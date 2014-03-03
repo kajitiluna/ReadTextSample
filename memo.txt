@@ -1,0 +1,12 @@
+1. The time of read a huge file.
+
+* read();
+ RESULT : 68510
+ RESULT : 63321
+ RESULT : 69570
+
+* read(char[]);
+ RESULT :  5160
+ RESULT :  5270
+ RESULT :  5410
+
